@@ -803,10 +803,8 @@
 
 	    // Bucle para extraer productos del carrito
 	    Object.values(products).forEach(p => {
-	        if (p.qty > 0) {
-	            const subtotal = p.price * p.qty;
-	            total += subtotal;
-	            orderText += `- ${p.name} x ${p.qty}%0A `;
+	        if (p.qty > 0) {	            	            
+	            orderText += `- ${p.name} x ${p.qty}%0A`;
 	        }
 	    });
 
