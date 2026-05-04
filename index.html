@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Pedidos Interactivo | Licores Pague Menos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32x32.png">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="img/icon-192.png">
     <style>
         :root {
-            --primary: #c0392b;
+            --primary: #2c3e50;
             --dark: #2c3e50;
             --light: #f9f9f9;
             --white: #ffffff;
@@ -37,7 +37,7 @@
         }
 
         .burger-menu { font-size: 24px; cursor: pointer; background: none; border: none; }
-        .store-name { font-weight: 700; font-size: 1.2rem; color: var(--primary); flex-grow: 1; text-align: center; margin-left: 10px; }
+        .store-name { font-weight: 500; font-size: 1.2rem; color: var(--primary); flex-grow: 1; text-align: center; }
         
         .share-btn { background: none; border: none; cursor: pointer; display: flex; align-items: center; padding: 5px; }
         .share-icon-img { width: 30px; height: 30px; }
@@ -142,11 +142,12 @@
 	}
 
         .section-banner { width: 100%; height: 150px; object-fit: cover; margin-top: 5px; }
-        .section-title { padding: 15px 20px; 
+        .section-title { 
+	    padding: 15px 20px; 
 	    background-image: url('img/title-bg.jpg'); 
 	    color: var(--white); 
 	    margin: 0; 
-	    font-weight: 500; }
+	    font-weight: 600; }
 
         .product-card {
 	    background: var(--white); 
@@ -798,18 +799,16 @@
 	    }
 
 	    let total = 0;
-	    let orderText = "¡Hola Ricuras April! Quisiera hacer el siguiente pedido:%0A%0A";
+	    let orderText = "¡Hola Pague Menos! Quisiera hacer el siguiente pedido:%0A%0A";
 
 	    // Bucle para extraer productos del carrito
 	    Object.values(products).forEach(p => {
 	        if (p.qty > 0) {
 	            const subtotal = p.price * p.qty;
 	            total += subtotal;
-	            orderText += `- ${p.name} x ${p.qty}%0A  subtotal: $ ${subtotal.toLocaleString()}%0A`;
+	            orderText += `- ${p.name} x ${p.qty}%0A `;
 	        }
 	    });
-
-	    orderText += `%0A*Total: $ ${total.toLocaleString()}*%0A`;
 
 	    // Info de entrega
 	    let infoEntrega = `%0A👤 *Recibe:* ${nombre}%0A📍 *Dirección:* ${direccionManual}`;
